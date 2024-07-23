@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { onMessage } from 'webext-bridge/content-script'
 import { createApp } from 'vue'
+import $ from 'jquery'
 import App from '~/components/Navbar.vue'
 import { setupApp } from '~/logic/common-setup'
 import '~/styles/index.css'
@@ -8,6 +9,7 @@ import { autoTitleChange } from '~/composables/titleChange';
 
 // Firefox `browser.tabs.executeScript()` requires scripts return a primitive value
 (() => {
+  $('head').append(`<meta name="viewport" content="width=device-width, initial-scale=1">`)
   console.info('[vitesse-webext] Hello world from content script')
 
   // communication example: send previous tab title from background page
@@ -15,7 +17,11 @@ import { autoTitleChange } from '~/composables/titleChange';
     console.log(`[vitesse-webext] Navigate from page "${data.title}"`)
   })
 
-  const root = document.querySelector('.c-navigator--navigator')!
+  $('.c-navigator--navigator').hide()
+
+  const root = document.createElement('div')
+  root.classList.add('c-navigator--navigator')
+  root.classList.add('c-navigator--nav_fixed')
 
   // mount component to context window
   const container = document.createElement('div')
@@ -60,6 +66,7 @@ import { autoTitleChange } from '~/composables/titleChange';
   head.setAttribute('href', browser.runtime.getURL('assets/icon.png'))
 
   document.head.appendChild(head)
+  $('.c-navigator--navigator').after(root)
 
   setInterval(() => {
     autoTitleChange()

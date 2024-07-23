@@ -33,6 +33,7 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.22",
     "@heroicons/vue": "^2.1.5",
+    "axios": "^1.7.2",
     "jquery": "^3.7.1",
     "outline": "link:@heroicons/vue/20/outline",
     "solid": "link:@heroicons/vue/20/solid",

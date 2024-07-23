@@ -14,11 +14,11 @@
 
 @font-face{
     font-family: 'product-sans';
-    src: url('../../assets/product-sans.ttf');
+    src: url('~/assets/product-sans.ttf');
 }
 @font-face{
     font-family: 'shishang';
-    src: url('../../assets/shishang.ttf');
+    src: url('~/assets/shishang.ttf');
 }
 .c-navigator--logo_wrap{
     display: flex;
@@ -41,4 +41,9 @@
 }
 .pickcat:not(.pickcat:first-child){
     display:none;
+}
+
+.c-navigator--navigator {
+    background: unset !important;
+    z-index: 2 !important;
 }
