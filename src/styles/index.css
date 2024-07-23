@@ -1,0 +1,44 @@
+@import "tailwindcss/tailwind.css";
+
+.c-side_nav--slide_nav,
+.c-footer--footer_wrap,
+.r-course-c-guide--slide_nav_wrap
+{
+    display:none !important
+}
+
+*::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px !important;
+}
+
+@font-face{
+    font-family: 'product-sans';
+    src: url('../../assets/product-sans.ttf');
+}
+@font-face{
+    font-family: 'shishang';
+    src: url('../../assets/shishang.ttf');
+}
+.c-navigator--logo_wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pickcat{
+    font-family: 'product-sans', 'shishang', serif;
+    font-size: 28px;
+    color:#000;
+    display: flex;
+}
+@media (max-width: 1280px) {
+    .c-navigator--header-content {
+        width: 95%!important;
+    }
+}
+.c-navigator--header-content .c-navigator--logo_wrap {
+    width: unset !important;
+}
+.pickcat:not(.pickcat:first-child){
+    display:none;
+}
