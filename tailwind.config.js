@@ -11,6 +11,11 @@ module.exports = {
       },
       Height: {
         '64px': '64px',
+        '4.5': '1.125rem',
+      },
+      spacing: {
+        '64px': '64px',
+        '4.5': '1.125rem',
       },
     },
   },
